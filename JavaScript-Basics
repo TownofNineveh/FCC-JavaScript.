@@ -1,0 +1,47 @@
+// Lesson Passing Values to Functions with Arguments //
+
+function testFun(param1, param2) {
+  console.log(param1, param2);
+}
+
+// in the following code the function of testFun is (param1, param2) , notably these are parameters, we want this process to be repeatable so further we
+insert these brackets{} this should follow //
+{ 
+console.log(param1, param2); 
+}
+
+//Then we can call testFun like this: testFun("Hello", "World"); 
+Take time to think that for this cample ("Hello") this string is param1 
+so you can alter how these strings arrays or values interact through the { console.log(param1,param2) } //
+
+****// This is my code for a sample of this process //
+ 
+ function functionWithArgs(p1,p2) {
+  console.log(p1 + p2);
+}
+functionWithArgs(1,2);
+functionWithArgs(7,9);
+
+
+// Return a Value from a Function with Return //
+
+// We can pass values into a function with arguments. You can use a return statement to send a value back out of a function. //
+
+function plusThree(num) {
+  return num + 3;
+}
+
+const answer = plusThree(5);
+
+// console.log(answer) will have a value of 8//
+
+****//My code to show this can be done to present multiple value. function timesFive(num) can is using the return function to add a value into  a simple 
+num*5 equation, var is used to express values that have multiple definitions thus I recieved the outputs in my console.log(answer) 0,25,10  in that order.//
+
+function timesFive(num) {
+  return num*5;
+}
+var answer = timesFive(0);
+var answer = timesFive(5);
+var answer = timesFive(2);
+console.log(answer);
