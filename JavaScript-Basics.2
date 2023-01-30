@@ -1,0 +1,125 @@
+// Second Lesson is on scopes of variable. 
+In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
+
+Variables which are declared without the let or const keywords are automatically created in the global scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with let or const.
+
+Using let or const, declare a global variable named myGlobal outside of any function. Initialize it with a value of 10.
+
+Inside function fun1, assign 5 to oopsGlobal without using the var, let or const keywords.//
+
+Global scope: The variable is available throughout the code
+Local scope: Available in only a certain area (like only within function)
+Block scope: Available within an even more certain area (like an if-statement)
+
+
+// Declare the myGlobal variable below this line
+****const myGlobal = 10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal here
+
+}
+****oopsGlobal = 5;
+// Only change code above this line
+
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+
+// for the second test I am exemplifying how any variable assigned in a function is a local variable to that function and will be called error
+if the variable is called outside of the function... in the next test when I call for the var associated with the function it will output a 5, as myVar = 5
+and its called fo rin the console.log. meaning it myLocalScope displays what myVar is = too inside the function. HOWEVER when called outside of the function myVar
+is undefined as it is only associated with the preceeding function.//
+
+function myLocalScope() {
+  // Only change code below this line
+****const myVar = 5;
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+ 
+ 
+ 
+ // In the next example it will show how it works if variables share names i.e. global and local both being "outerWear" in the following code. 
+ local variable in a function superceeds any global when displaying the functions result.// Side note dont forget the Return Statement with functions
+ 
+ 
+ // Setup
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  // Only change code below this line
+****const outerWear = "sweater";
+  // Only change code above this line
+  return outerWear;
+}
+
+myOutfit();
+
+
+
+// This next lesson should display how you can use multiple local variables to affect a global variable.//
+
+Example
+
+let sum = 0;
+
+function addSum(num) {
+  sum = sum + num;
+}
+
+addSum(3);
+
+// addSum is a function without a return statement. The function will change the global sum variable but the returned value of the function is undefined.
+This works because addSum gets described later as the function equating to 3.... thus  = addSum = (sum = sum + numb).//
+
+With my example I already have a defined sum = sum + 3 meaning if I ran this without adding my line of code it would give me sum = 3 and sum = undefined as
+there still is no return. however if I add sa secondary function with sum += 5 i am constenating the sum to +5. thus when when the code is finaly ran 
+it is sum = Sum +3 +5 or sum =8 and if addFive or addThree are called they will all be undefined.
+
+// Setup
+let sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
+// Only change code below this line
+function addFive() {
+****   sum += 5
+}
+
+// Only change code above this line
+
+addThree();
+addFive();
+
+/////This next one is very important as it shows a great way we can use a function and call for results. 
+If you'll recall from our discussion about Storing Values with the Assignment Operator, everything to the right of the equal sign
+is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable.//
+
+// Setup
+let processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+// Only change code below this line
+*****processed = processArg(7); 
+
+for this one I chose to call for processed... I ask the console what would the process look like if I ran the argument with a num = 7.
+With this done it outputs a value of 2.
+
+
